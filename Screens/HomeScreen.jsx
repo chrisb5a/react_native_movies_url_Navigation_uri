@@ -1,20 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
+//import {NavigationContainer} from '@react-navigation/native';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
+  Button,
   Text,
   useColorScheme,
   View,
+  Alert
 } from 'react-native';
 
 import {
@@ -54,8 +50,9 @@ function Section({children, title}: SectionProps): React.JSX.Element {
     </View>
   );
 }
-
-function App(): React.JSX.Element {
+ 
+ function HomeScreen({navigation}): React.JSX.Element {
+  //const navigation = useNavigation();
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -63,6 +60,8 @@ function App(): React.JSX.Element {
   };
 
   return (
+   
+    
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -76,8 +75,17 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Section title='Button'> 
+          <Button
+             title="See Movies"
+        onPress={() =>
+          navigation.navigate('ListScreen', {name: 'ListScreen'})}
+        //onPress={() => Alert.alert('Simple Button pressed')}
+      />
+          </Section>
+          
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            Edit <Text style={styles.highlight}>App.jsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
@@ -93,6 +101,8 @@ function App(): React.JSX.Element {
         </View>
       </ScrollView>
     </SafeAreaView>
+   
+    
   );
 }
 
@@ -115,4 +125,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;
