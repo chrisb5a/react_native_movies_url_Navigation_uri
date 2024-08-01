@@ -1,3 +1,26 @@
+Summary
+
+This project has been tested on Ios platforms.
+What is done?
+
+-Upon launching the react native welcome screen loads 
+
+-On this screen is added a navigation button that navigates to screens. 
+
+-The screen before last shows the results obtained from fetching the url : ""https://image.tmdb.org/t/p/w500"
+
+-The results are arranged on a scrollview with Movie poster and Title.
+
+-Upon clicking one can navigate to the movie chosen and see the description
+
+
+
+
+
+
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
